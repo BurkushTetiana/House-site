@@ -1,0 +1,219 @@
+﻿<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Панель лікаря · Diagnostic Center USE IT</title>
+    <link rel="stylesheet" href="src/style.css" />
+    <style>
+        .doctor-dashboard {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .db-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+        }
+
+            .db-card h2 {
+                color: var(--accent-light);
+                font-family: var(--font-mono);
+                font-size: 1.2rem;
+                text-transform: uppercase;
+                margin-bottom: 1.5rem;
+                border-bottom: 1px solid var(--border);
+                padding-bottom: 0.5rem;
+            }
+
+        .patient-item, .complaint-item {
+            background: var(--bg-main);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .item-meta {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--accent-mid);
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .item-text {
+            color: var(--text-warm);
+            line-height: 1.5;
+            margin-bottom: 0.75rem;
+        }
+
+        .doctor-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .btn-small-gold {
+            background: var(--accent-dark);
+            color: #fff;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+            .btn-small-gold:hover {
+                background: var(--accent-mid);
+            }
+
+        .status-badge {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            background: #d35400;
+            color: #fff;
+        }
+
+        @media (max-width: 1024px) {
+            .doctor-dashboard {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="page-content" class="visible">
+
+        <header id="site-header">
+            <div class="header-inner">
+                <a href="index.html"><img class="header-logo" src="images/use_it_logl.jpg" alt="USE IT" /></a>
+                <span class="header-title">👨‍⚕️ ПАНЕЛЬ ЛІКАРЯ (КОНСИЛІУМ)</span>
+                <nav class="header-nav" style="margin-left: auto;">
+                    <a href="index.html">Повернутись на сайт</a>
+                </nav>
+                <div class="header-controls">
+                    <button id="theme-toggle" title="Перемкнути тему">☀️</button>
+                </div>
+            </div>
+        </header>
+
+        <section class="section">
+            <div class="container">
+                <h1 style="color:var(--accent-light); margin-bottom: 0.5rem;">Робоче місце лікаря-діагноста</h1>
+                <p style="color:var(--text-muted); font-family:var(--font-mono); font-size:0.82rem; letter-spacing: 0.05em;">Централізована база даних (БД) аналізу карток та скарг пацієнтів · Травень 2026</p>
+
+                <div class="doctor-dashboard">
+
+                    <div class="db-card">
+                        <h2>📥 Вхідні медичні картки пацієнтів (Імітація БД)</h2>
+
+                        <div id="patients-db-list">
+                            <div class="patient-item" id="p-card-1">
+                                <div class="item-meta">
+                                    <span>Пацієнт: Олександр К. (Чоловік, 35 років)</span>
+                                    <span class="status-badge" id="badge-1">Очікує аналізу</span>
+                                </div>
+                                <div class="item-text">
+                                    <strong>Симптом:</strong> Висока температура / Лихоманка<br>
+                                    <strong>Опис розвитку:</strong> Третій день тримається температура 39.2°C. Звичайні жарознижувальні не діють. З'явився дивний сухий кашель та локальний біль у правому підребер'ї. Хрипів немає.
+                                </div>
+                                <div class="doctor-actions">
+                                    <button class="btn-small-gold" onclick="requestPhoto(1)">Запросити фото патології</button>
+                                    <button class="btn-small-gold" style="background:#27ae60;" onclick="archiveCard(1)">Встановити діагноз</button>
+                                </div>
+                            </div>
+
+                            <div class="patient-item" id="p-card-2">
+                                <div class="item-meta">
+                                    <span>Пацієнт: Олена М. (Жінка, 28 років)</span>
+                                    <span class="status-badge" id="badge-2">Очікує аналізу</span>
+                                </div>
+                                <div class="item-text">
+                                    <strong>Симптом:</strong> Раптовий висип / Зміна кольору шкіри<br>
+                                    <strong>Опис розвитку:</strong> Після прийому нового антибіотика на руках та шиї виникли яскраві фіолетові плями, які не чешуться, але болять при натисканні. Також відчуваю сильний головний біль.
+                                </div>
+                                <div class="doctor-actions">
+                                    <button class="btn-small-gold" onclick="requestPhoto(2)">Запросити фото патології</button>
+                                    <button class="btn-small-gold" style="background:#27ae60;" onclick="archiveCard(2)">Встановити діагноз</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="db-card">
+                        <h2>⚠️ Скарги та претензії пацієнтів (Зовнішній супорт)</h2>
+
+                        <div id="complaints-db-list">
+                            <div class="complaint-item">
+                                <div class="item-meta">
+                                    <span>Від: Дмитро Сергійович</span>
+                                    <span style="color:#e74c3c;">Категорія: Груба поведінка</span>
+                                </div>
+                                <div class="item-text">
+                                    Лікар-діагност на першому прийомі демонстративно ігнорував мої слова, грав у портативну консоль і сказав, що мій опис хвороби — «це повна нісенітниця і драма». Прошу вжити заходів щодо етики спілкування!
+                                </div>
+                            </div>
+
+                            <div class="complaint-item">
+                                <div class="item-meta">
+                                    <span>Від: Тетяна В.</span>
+                                    <span style="color:#e74c3c;">Категорія: Затримка аналізів</span>
+                                </div>
+                                <div class="item-text">
+                                    Чекаю на бланки розгорнутої біохімії крові вже більше 48 годин, хоча мені обіцяли результати за день. Лабораторія каже, що консиліум ще не затвердив висновок.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>© Diagnostic Center USE IT · Внутрішня панель консиліуму експертів · 2026</p>
+        </footer>
+
+    </div>
+
+    <script src="src/quotes.js"></script>
+    <script src="src/script.js"></script>
+    <script>
+    // Інтерактивна логіка дій лікаря
+    function requestPhoto(id) {
+        const badge = document.getElementById('badge-' + id);
+        if (badge) {
+            badge.textContent = "Доступ до фото надано пацієнту";
+            badge.style.background = "#2980b9";
+        }
+        if (window.showToast) {
+            window.showToast('images/team_screen.jpg', 'Пацієнту відправлено сповіщення: Лікар просить завантажити фотографію висипу або аналізів.');
+        }
+    }
+
+    function archiveCard(id) {
+        const card = document.getElementById('p-card-' + id);
+        if (card) {
+            card.style.opacity = '0.4';
+            const badge = document.getElementById('badge-' + id);
+            if (badge) {
+                badge.textContent = "Діагноз підтверджено";
+                badge.style.background = "#27ae60";
+            }
+        }
+    }
+    </script>
+</body>
+</html>

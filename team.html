@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Команда · Diagnostic Center</title>
+    <link rel="stylesheet" href="src/style.css?v=4" />
+</head>
+<body>
+    <div id="page-content" class="visible">
+
+        <header id="site-header">
+            <div class="header-inner">
+                <a href="index.html"><img class="header-logo" src="images/use_it_logl.jpg" alt="Logo" /></a>
+                <span class="header-title">Diagnostic Center</span>
+                <nav class="header-nav">
+                    <a href="index.html" data-i18n="nav-main">Головна</a>
+                    <a href="about.html" data-i18n="nav-about">Про центр</a>
+                    <a href="team.html" class="active" data-i18n="nav-team">Персонал</a>
+                    <a href="cases.html" data-i18n="nav-cases">Кейси</a>
+                    <a href="game.html" data-i18n="nav-game">Гра</a>
+                    <a href="contacts.html" data-i18n="nav-contacts">Контакти</a>
+                </nav>
+                <div class="header-controls">
+                    <div class="lang-switcher">
+                        <button class="lang-btn active" data-lang="ua">UA</button>
+                        <button class="lang-btn" data-lang="en">EN</button>
+                    </div>
+                    <button id="theme-toggle" title="Перемкнути тему">☀️</button>
+                </div>
+            </div>
+        </header>
+
+        <section class="section">
+            <div class="container">
+                <h1 style="color:var(--accent-light); margin-bottom: 0.5rem;" data-i18n="nav-team">Персонал</h1>
+                <p style="color:var(--text-muted); margin-bottom: 2.5rem;">Спеціалісти вищої категорії аналітичної та диференціальної діагностики.</p>
+
+                <div class="team-responsive-grid">
+
+                    <div class="team-member-card">
+                        <img src="images/team/house_avatar.jpg" onerror="this.src='images/use_it_brain.jpg'" class="team-card-photo" alt="Д-р Грегорі Хаус" />
+                        <div class="team-card-info">
+                            <h3>Д-р Грегорі Х.</h3>
+                            <div class="team-card-role">Керівник відділення</div>
+                            <div class="team-card-quote">"Мозок — єдиний орган, який вам справді потрібен. Використовуйте його."</div>
+                        </div>
+                    </div>
+
+                    <div class="team-member-card">
+                        <img src="images/team/foreman_avatar.jpg" onerror="this.src='images/use_it_brain.jpg'" class="team-card-photo" alt="Д-р Ерік Форман" />
+                        <div class="team-card-info">
+                            <h3>Д-р Ерік Ф.</h3>
+                            <div class="team-card-role">Старший невролог</div>
+                            <div class="team-card-quote">"Об'єктивні тести дають точність, навіть коли слова пацієнта брешуть."</div>
+                        </div>
+                    </div>
+
+                    <div class="team-member-card">
+                        <img src="images/team/chase_avatar.jpg" onerror="this.src='images/use_it_brain.jpg'" class="team-card-photo" alt="Д-р Роберт Чейз" />
+                        <div class="team-card-info">
+                            <h3>Д-р Роберт Ч.</h3>
+                            <div class="team-card-role">Інтенсивна терапія</div>
+                            <div class="team-card-quote">"Швидкість реакції та чиста біохімія вирішують долю складних кейсів."</div>
+                        </div>
+                    </div>
+
+                    <div class="team-member-card">
+                        <img src="images/team/cameron_avatar.jpg" onerror="this.src='images/use_it_brain.jpg'" class="team-card-photo" alt="Д-р Еллісон Кемерон" />
+                        <div class="team-card-info">
+                            <h3>Д-р Еллісон К.</h3>
+                            <div class="team-card-role">Імунолог</div>
+                            <div class="team-card-quote">"Ми повинні бачити в пацієнті靈людину, а не просто набір медичних симптомів."</div>
+                        </div>
+                    </div>
+
+                    <div class="team-member-card">
+                        <img src="images/team/liza_avatar.jpg" onerror="this.src='images/use_it_brain.jpg'" class="team-card-photo" alt="Д-р Елізабет Кадді" />
+                        <div class="team-card-info">
+                            <h3>Д-р Елізабет К.</h3>
+                            <div class="team-card-role">Керівник лікарні · Головний адміністратор</div>
+                            <div class="team-card-quote">"Мій обов'язок — змусити цей центр працювати за правилами, навіть якщо генеральний діагност вважає, що він вищий за закон."</div>
+                        </div>
+                    </div>
+
+                    <div class="team-member-card">
+                        <img src="images/team/thirteen_avatar.jpg" onerror="this.src='images/use_it_brain.jpg'" class="team-card-photo" alt="Д-р Ремі Хадлі" />
+                        <div class="team-card-info">
+                            <h3>Д-р Ремі Х.</h3>
+                            <div class="team-card-role">Терапевт-дослідник</div>
+                            <div class="team-card-quote">"Правда завжди відкривається в лабораторії, навіть якщо вона комусь не подобається."</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>© Diagnostic Center · Панель медичної допомоги пацієнтам · 2026</p>
+        </footer>
+    </div>
+
+    <script type="module" src="src/quotes.js"></script>
+    <script type="module" src="src/script.js"></script>
+</body>
+</html>

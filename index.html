@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diagnostic Center</title>
+    <link rel="stylesheet" href="src/style.css?v=3" />
+</head>
+<body>
+
+    <div id="page-content">
+
+        <header id="site-header">
+            <div class="header-inner">
+                <img class="header-logo" src="images/use_it_logl.jpg" alt="Logo" />
+                <span class="header-title">Diagnostic Center</span>
+
+                <nav class="header-nav">
+                    <a href="index.html" class="active" data-i18n="nav-main">Головна</a>
+                    <a href="about.html" data-i18n="nav-about">Про центр</a>
+                    <a href="team.html" data-i18n="nav-team">Персонал</a>
+                    <a href="cases.html" data-i18n="nav-cases">Кейси</a>
+                    <a href="game.html" data-i18n="nav-game">Гра</a>
+                    <a href="contacts.html" data-i18n="nav-contacts">Контакти</a>
+                </nav>
+
+                <div class="header-controls">
+                    <div class="lang-switcher">
+                        <button class="lang-btn active" data-lang="ua">UA</button>
+                        <button class="lang-btn" data-lang="en">EN</button>
+                    </div>
+                    <button id="theme-toggle" title="Перемкнути тему">☀️</button>
+                    <button id="auth-trigger-btn" class="btn-auth" data-i18n="btn-auth">Увійти</button>
+                </div>
+            </div>
+        </header>
+
+        <section class="hero-banner-section">
+            <div class="hero-text-wrap">
+                <h1 id="hero-main-title" data-i18n="hero-title">Ласкаво просимо до Diagnostic Center</h1>
+                <p id="hero-sub-text" data-i18n="hero-sub">Ми раді вітати вас на нашому офіційному порталі. Наш сервіс створений для пацієнтів, які зіткнулися зі складними або суперечливими медичними діагнозами. Опишіть свої симптоми у формі нижче — команда кваліфікованих експертів проведе ретельний аналіз та допоможе знайти правильне вирішення вашої проблеми.</p>
+                <button class="btn-gold" data-i18n="hero-btn">Почати діагностику</button>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="container">
+                <h2 class="gallery-clean-title" data-i18n="gallery-title">Документальний архів відділення</h2>
+                <p class="gallery-clean-subtitle" data-i18n="gallery-sub">Стрічка клінічних свідчень та внутрішнього життя нашого діагностичного центру.</p>
+
+                <div class="gallery-carousel-wrap square-gallery">
+                    <div class="carousel-frame">
+                        <div class="carousel-slide active">
+                            <img src="images/use_it_brain.jpg" alt="Слайд 1" />
+                            <div class="carousel-caption">Логотип. Місія. Спосіб життя center.</div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/wahui1.jpg" alt="Слайд 2" />
+                            <div class="carousel-caption">Реакція на standardні інтернет-діагнози пацієнтів.</div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/wahui2.jpg" alt="Слайд 3" />
+                            <div class="carousel-caption">Аналіз складних клінічних симптомів у лабораторії.</div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/clown.jpg" alt="Слайд 4" />
+                            <div class="carousel-caption">Результат самолікування за порадами з форумів.</div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/wilson_mouth.jpg" alt="Слайд 5" />
+                            <div class="carousel-caption">Обговорення аномальних результатів томографії.</div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/house_rat.jpg" alt="Слайд 6" />
+                            <div class="carousel-caption">Лабораторні дослідження на чутливість до антибіотиків.</div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/house_dress.jpg" alt="Слайд 7" />
+                            <div class="carousel-caption">Нестандартні підходи під час проведення консиліуму.</div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/team_screen.jpg" alt="Слайд 8" />
+                            <div class="carousel-caption">Команда аналізує вхідні картки симптомів у реальному часі.</div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/shock_worker.jpg" alt="Слайд 9" />
+                            <div class="carousel-caption">Пацієнт, який першим зразково заповнив анкету про хворобу.</div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/caterpillar.jpg" alt="Слайд 10" />
+                            <div class="carousel-caption">Наочний токсикологічний аналіз впливу нікотинових смол.</div>
+                        </div>
+                    </div>
+                    <div class="carousel-controls">
+                        <button class="slide-btn btn-prev">&#8249; Назад</button>
+                        <button class="slide-btn btn-next">Вперед &#8250;</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div style="display:flex;gap:3rem;flex-wrap:wrap;align-items:flex-start;">
+                    <div style="flex:1;min-width:280px;" class="message-block">
+                        <h2 class="section-title" data-i18n="msg-title">Написати до консиліуму</h2>
+
+                        <div id="consilium-form-wrapper" style="margin-top: 1rem;">
+                            <div class="form-row" style="margin-bottom:1rem;">
+                                <label style="display:block; font-size:0.8rem; font-family:var(--font-mono); margin-bottom:0.4rem; text-transform:uppercase;">Стать пацієнта *</label>
+                                <div class="radio-group" style="display:flex; gap:1.5rem;">
+                                    <label class="radio-label"><input type="radio" name="main-gender" value="male" checked /> Чоловік</label>
+                                    <label class="radio-label"><input type="radio" name="main-gender" value="female" /> Жінка</label>
+                                </div>
+                            </div>
+
+                            <div class="form-row" style="margin-bottom:1rem;">
+                                <label for="main-symptoms-select" style="display:block; font-size:0.8rem; font-family:var(--font-mono); margin-bottom:0.4rem; text-transform:uppercase;">Основна ознака патології</label>
+                                <select id="main-symptoms-select" class="medical-select">
+                                    <option value="pain">Гострий біль (локалізований)</option>
+                                    <option value="fever">Висока температура / Лихоманка</option>
+                                    <option value="rash">Раптовий висип / Зміна кольору шкіри</option>
+                                    <option value="seizures">Судоми / Втрата координації</option>
+                                    <option value="dyspnea">Задишка / Ускладнене дихання</option>
+                                    <option value="fatigue">Хронічна втома / Апатія</option>
+                                    <option value="hallucinations">Галюцинації / Порушення сприйняття</option>
+                                    <option value="other" selected>Інші аномальні стани</option>
+                                </select>
+                            </div>
+
+                            <div class="form-row" style="margin-bottom:1rem;">
+                                <label style="display:block; font-size:0.8rem; font-family:var(--font-mono); margin-bottom:0.4rem; text-transform:uppercase;">Детальний опис розвитку хвороби *</label>
+                                <textarea style="width:100%; background:var(--bg-main); border:1px solid var(--border); color:var(--text-warm); padding:1rem; border-radius:6px; font-size:0.95rem; resize:vertical; min-height:120px; outline:none;" placeholder="Опишіть ваші симптоми максимально детально. Що болить, коли почалося? (Мінімум 10 символів)"></textarea>
+                            </div>
+
+                            <button id="send-to-house" class="btn-gold" data-i18n="msg-btn">Надіслати на медичний розбір</button>
+                            <div id="typing-response"></div>
+                        </div>
+                    </div>
+
+                    <div style="flex:0 0 auto;">
+                        <h2 class="section-title">Моніторинг змін</h2>
+                        <div class="timer-block">
+                            <div class="timer-title">· Princeton-Plainsboro · Status ·</div>
+                            <div class="timer-row">
+                                <span class="timer-label">Поточний час</span>
+                                <span class="timer-value" id="timer-time">--:--:--</span>
+                            </div>
+                            <div class="timer-row">
+                                <span class="timer-label">Дата</span>
+                                <span class="timer-value" style="font-size:0.95rem" id="timer-date">--</span>
+                            </div>
+                            <div class="timer-row">
+                                <span class="timer-label">До перезмінки лікарів</span>
+                                <span class="timer-value" id="timer-shift">--:--:--</span>
+                            </div>
+                            <div class="timer-row" style="flex-direction:column;align-items:flex-start;gap:0.3rem;">
+                                <span class="timer-label">Вікно прийому екстрених листів</span>
+                                <span class="timer-status" id="timer-window">Завантаження...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="container">
+                <h2 class="section-title" data-i18n="wheel-title">Колесо експертної мудрості</h2>
+                <p style="color:var(--text-muted);font-size:0.88rem;margin-bottom:1.5rem;" data-i18n="wheel-sub">Натисніть на діагностичне колесо, щоб отримати медичну настанову або розбір.</p>
+                <div class="wheel-section">
+                    <canvas id="fortune-wheel" width="260" height="260"></canvas>
+                    <div class="wheel-quote-box">
+                        <p style="font-size:0.75rem;color:var(--text-muted);font-family:var(--font-mono);margin-bottom:0.75rem;" data-i18n="wheel-caption">// КЛІНІЧНИЙ ВИСНОВОК //</p>
+                        <p id="wheel-quote" data-i18n="wheel-start">Натисніть на колесо для запуску аналізу.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>© Diagnostic Center · Панель медичної допомоги пацієнтам · 2026</p>
+        </footer>
+
+    </div>
+
+    <div id="auth-modal" class="modal-overlay">
+        <div class="medical-modal-content">
+            <button class="modal-close-btn">✕</button>
+            <div class="form-header">
+                <h2>Реєстрація медичної картки</h2>
+                <p>Форма обліку пацієнтів · Princeton-Plainsboro Hospital</p>
+            </div>
+            <form id="register-form" novalidate>
+                <div class="form-row">
+                    <label for="patient-name">Ім'я та прізвище пацієнта *</label>
+                    <input type="text" id="patient-name" placeholder="Олександр Коваленко" />
+                    <div class="form-error" id="name-error"></div>
+                </div>
+                <div class="form-row">
+                    <label for="patient-email">Контактний Email *</label>
+                    <input type="email" id="patient-email" placeholder="patient@mail.com" />
+                    <div class="form-error" id="email-error"></div>
+                </div>
+                <div class="form-row">
+                    <label for="patient-phone">Номер телефону *</label>
+                    <input type="tel" id="patient-phone" placeholder="+380_________" />
+                    <div class="form-error" id="phone-error"></div>
+                </div>
+                <div class="form-row">
+                    <label for="patient-dob">Дата народження *</label>
+                    <input type="date" id="patient-dob" />
+                    <div class="form-error" id="dob-error"></div>
+                </div>
+                <div class="checkbox-row">
+                    <input type="checkbox" id="agree-rudeness" />
+                    <label for="agree-rudeness">Я підтверджую достовірність вказаних даних та даю згоду на обробку інформації консиліумом спеціалістів *</label>
+                </div>
+                <div class="form-error" id="agree-error"></div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-gold">Створити акаунт</button>
+                    <button type="reset" class="btn-dark">Очистити</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="src/quotes.js"></script>
+    <script type="module" src="src/script.js"></script>
+</body>
+</html>

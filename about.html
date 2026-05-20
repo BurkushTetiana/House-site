@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Про центр · Diagnostic Center</title>
+    <link rel="stylesheet" href="src/style.css?v=5" />
+</head>
+<body>
+    <div id="page-content" class="visible">
+
+        <header id="site-header">
+            <div class="header-inner">
+                <a href="index.html"><img class="header-logo" src="images/use_it_logl.jpg" alt="Logo" /></a>
+                <span class="header-title">Diagnostic Center</span>
+                <nav class="header-nav">
+                    <a href="index.html" data-i18n="nav-main">Головна</a>
+                    <a href="about.html" class="active" data-i18n="nav-about">Про центр</a>
+                    <a href="team.html" data-i18n="nav-team">Персонал</a>
+                    <a href="cases.html" data-i18n="nav-cases">Кейси</a>
+                    <a href="game.html" data-i18n="nav-game">Гра</a>
+                    <a href="contacts.html" data-i18n="nav-contacts">Контакти</a>
+                </nav>
+                <div class="header-controls">
+                    <div class="lang-switcher">
+                        <button class="lang-btn active" data-lang="ua">UA</button>
+                        <button class="lang-btn" data-lang="en">EN</button>
+                    </div>
+                    <button id="theme-toggle" title="Перемкнути тему">☀️</button>
+                </div>
+            </div>
+        </header>
+
+        <section class="section">
+            <div class="container">
+                <h1 style="color:var(--accent-light); margin-bottom:0.5rem;" data-i18n="nav-about">Про центр</h1>
+                <p style="color:var(--text-muted); font-family:var(--font-mono); font-size:0.82rem; letter-spacing:0.08em; margin-bottom:2.5rem;">Об'єктивна медицина. Пошук істини. Результат.</p>
+
+                <div class="about-flex-row">
+                    <div class="about-text-col">
+                        <p>Ласкаво просимо до відділення спеціалізованої діагностичної медицини. Наш центр створений виключно для тих випадків, коли standardні методи лікування не дають результату, а симптоми пацієнта залишаються загадкою для більшості лікарів. Ми об'єднали передові лабораторні технології та унікальну аналітичну стратегію, щоб знаходити відповіді там, де інші розводять руками.</p>
+                        <p>Наш підхід повністю виключає сліпу довіру до поверхневих скарг. Медична практика доводить: пацієнти часто приховують критичні деталі свого способу життя, професійної діяльності або оточення, вважаючи їх неважливими. Тому аналіз будь-якої патології у нашому центрі базується виключно на незаперечних фактах, глибоких біохімічних дослідженнях та ретельній перевірці кожної дрібниці.</p>
+                    </div>
+                    <div class="about-img-col">
+                        <img src="images/use_it_logl.jpg" alt="USE IT LOGO" />
+                        <p class="img-caption">USE IT. Головне правило нашої лабораторії.</p>
+                    </div>
+                </div>
+
+                <div class="about-flex-row reverse">
+                    <div class="about-text-col">
+                        <p>Головне завдання нашої команди — розшифрувати те, про що сигналізує ваше тіло. Кожен клінічний випадок розглядається на засіданні консиліуму експертів, де детально вивчається хронологія розвитку хвороби. Ми не займаємося заспокійливими бесідами — ми шукаємо точну причину збою в організмі та розробляємо прямий алгоритм для її повного усунення.</p>
+                        <h2 style="color:var(--accent-light); margin-bottom:1rem;">Технологічний процес розбору патологій</h2>
+                        <p>Сучасна діагностика — це не просто набір аналізів, а складний логічний процес. Поєднання експертного досвіду лікарів-неврологів, імунологів та хірургів дозволяє нам бачити картину хвороби в цілому, відкидаючи помилкові діагнози та знаходячи рідкісні системні ураження на ранніх стадіях.</p>
+                    </div>
+                    <div class="about-img-col">
+                        <img src="images/house_rat.jpg" alt="Лабораторні дослідження" />
+                        <p class="img-caption">Контроль чистоти біологічних тестів у лабораторії центру.</p>
+                    </div>
+                </div>
+
+                <div class="media-block" style="margin-top: 3rem;">
+                    <h2 style="color:var(--accent-light); margin-bottom:1rem;">Гімн нашого центру</h2>
+                    <iframe src="https://www.youtube.com/embed/L3FP1G9vrFI?si=1s60xfAvPIOCGrrU" title="Гімн нашого центру" allowfullscreen loading="lazy" style="width:100%; aspect-ratio:16/9; border-radius:8px; border:1px solid var(--border);"></iframe>
+                </div>
+
+                <div style="margin:3rem 0 1rem; padding:1.5rem; background:var(--bg-card); border:1px solid var(--border); border-radius:8px;">
+                    <h2 style="color:var(--accent-light); margin-bottom:1rem;">Наш другий гімн: «It's never lupus»</h2>
+
+                    <audio controls style="width:100%; max-width:400px; accent-color:var(--accent-light); margin-bottom:1.5rem;">
+                        <source src="images/lupus.mp3" type="audio/mpeg">
+                        Ваш браузер не підтримує аудіоелемент.
+                    </audio>
+
+                    <p style="font-size:0.95rem; line-height:1.6; margin-bottom:1rem;">
+                        <strong>Медична довідка:</strong> Термін <em>«Lupus»</em> (з латинської — вовк) українською перекладається як <strong>вовчак</strong> (повна назва — системний червоний вовчак). Це складне хронічне автоімунне захворювання, при якому імунна система дає збій і починає атакувати власні здорові тканини: суглоби, шкіру, нирки, клітини крові, мозок та серце.
+                    </p>
+
+                    <p style="font-size:0.95rem; line-height:1.6; margin-bottom:0;">
+                        Через те, що симптоми вовчака здатні імітувати сотні інших патологій, недосвідчені лікарі постійно пропонують його як первинний діагноз. Саме тому фраза <em>«Це ніколи не вовчак»</em> стала нашим абсолютним правилом та неофіційним гімном відділення.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <footer>
+            <p>© Diagnostic Center · Панель медичної допомоги пацієнтам · 2026</p>
+        </footer>
+
+    </div>
+
+    <script type="module" src="src/quotes.js"></script>
+    <script type="module" src="src/script.js"></script>
+</body>
+</html>
