@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Діагностична лабораторія · Diagnostic Center</title>
+    <style>
+        .body-map-wrap {
+            position: relative;
+            display: inline-block;
+        }
+
+        .organ-hotspot {
+            position: absolute;
+            cursor: pointer;
+            border-radius: 50%;
+            border: 2px solid var(--accent-mid);
+            background: rgba(143,106,61,0.2);
+            transition: background 0.2s, border-color 0.2s, transform 0.15s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .organ-hotspot:hover {
+                background: rgba(210,165,107,0.35);
+                border-color: var(--accent-light);
+                transform: scale(1.12);
+            }
+
+            .organ-hotspot span {
+                font-size: 0.7rem;
+                color: var(--accent-light);
+                font-family: var(--font-mono);
+                letter-spacing: 0.04em;
+                text-align: center;
+                line-height: 1.2;
+            }
+    </style>
+  <script type="module" crossorigin src="/assets/script-CSLGVcfc.js"></script>
+  <script type="module" crossorigin src="/assets/quotes-DQRSH3mN.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/about-u0RfjyYy.css">
+</head>
+<body>
+  
+    
+    <div id="page-content" class="visible">
+
+        <header id="site-header">
+            <div class="header-inner">
+                <a href="index.html"><img class="header-logo" src="/assets/use_it_logl-B1yuBCD_.jpg" alt="Logo" /></a>
+                <span class="header-title">Diagnostic Center</span>
+                <nav class="header-nav">
+                    <a href="index.html" data-i18n="nav-main">Головна</a>
+                    <a href="about.html" data-i18n="nav-about">Про центр</a>
+                    <a href="team.html" data-i18n="nav-team">Персонал</a>
+                    <a href="cases.html" data-i18n="nav-cases">Кейси</a>
+                    <a href="game.html" class="active" data-i18n="nav-game">Гра</a>
+                    <a href="contacts.html" data-i18n="nav-contacts">Контакти</a>
+                </nav>
+                <div class="header-controls">
+                    <div class="lang-switcher">
+                        <button class="lang-btn active" data-lang="ua">UA</button>
+                        <button class="lang-btn" data-lang="en">EN</button>
+                    </div>
+                    <button id="theme-toggle" title="Перемкнути тему">☀️</button>
+                    <button id="auth-trigger-btn" class="btn-auth" data-i18n="btn-auth">Увійти</button>
+                </div>
+            </div>
+        </header>
+
+
+        <!--<section class="section">
+            <div class="container">
+                <h1 style="color:var(--accent-light); margin-bottom:0.4rem;" data-i18n="nav-game">Гра</h1>
+                <p style="color:var(--text-muted); font-family:var(--font-mono); font-size:0.82rem; letter-spacing:0.06em; margin-bottom:2rem;">Оберіть сектор або орган на карті тіла для отримання діагностичного аналізу</p>
+
+                <div class="game-container">
+                    <div class="game-info" style="flex:0 0 auto;">
+                        <div class="game-counter">
+                            <span id="game-counter-text">Спроб: 0 · Локалізовано: 0 · Систему готово до сканування</span>
+                        </div>
+
+                        <div class="body-map-wrap" id="body-map-wrap">
+                            <svg width="220" height="480" viewBox="0 0 220 480" xmlns="http://www.w3.org/2000/svg" style="display:block; filter:drop-shadow(0 4px 12px rgba(0,0,0,0.4));">
+                                <g fill="none" stroke="#5A5B55" stroke-width="1.5">
+                                    <ellipse cx="110" cy="38" rx="28" ry="34" fill="#32332D" />
+                                    <rect x="100" y="68" width="20" height="16" rx="4" fill="#32332D" />
+                                    <path d="M68 84 Q60 90 58 120 L55 200 Q55 215 68 220 L152 220 Q165 215 165 200 L162 120 Q160 90 152 84 Z" fill="#32332D" />
+                                    <path d="M68 88 Q50 95 42 120 L36 180 Q35 192 42 195 L52 195 Q58 192 60 180 L62 140 Q64 120 68 108 Z" fill="#292A24" />
+                                    <path d="M152 88 Q170 95 178 120 L184 180 Q185 192 178 195 L168 195 Q162 192 160 180 L158 140 Q156 120 152 108 Z" fill="#292A24" />
+                                    <path d="M80 220 L74 350 Q72 370 78 375 L96 375 Q102 370 102 350 L100 220 Z" fill="#292A24" />
+                                    <path d="M120 220 L118 350 Q118 370 124 375 L142 375 Q148 370 146 350 L140 220 Z" fill="#292A24" />
+                                    <ellipse cx="87" cy="385" rx="14" ry="10" fill="#32332D" />
+                                    <ellipse cx="133" cy="385" rx="14" ry="10" fill="#32332D" />
+                                </g>
+                                <ellipse cx="110" cy="30" rx="18" ry="16" fill="none" stroke="#8F6A3D" stroke-width="1" stroke-dasharray="3,2" />
+                                <path d="M96 135 Q96 128 103 128 Q108 128 110 132 Q112 128 117 128 Q124 128 124 135 Q124 142 110 150 Q96 142 96 135 Z" fill="none" stroke="#8F6A3D" stroke-width="1" stroke-dasharray="3,2" />
+                                <path d="M90 165 Q88 158 98 155 Q112 153 120 158 Q128 163 125 172 Q120 178 108 177 Q94 176 90 165 Z" fill="none" stroke="#8F6A3D" stroke-width="1" stroke-dasharray="3,2" />
+                            </svg>
+
+                            <div class="organ-hotspot" data-organ="brain" style="top:8px; left:86px; width:48px; height:44px;" title="Запустити скан головного мозку">
+                                <span>Мозок</span>
+                            </div>
+                            <div class="organ-hotspot" data-organ="heart" style="top:122px; left:84px; width:52px; height:44px;" title="Запустити скан кардіосистеми">
+                                <span>Серце</span>
+                            </div>
+                            <div class="organ-hotspot" data-organ="liver" style="top:152px; left:80px; width:60px; height:40px; border-radius:8px;" title="Запустити скан гепатосистеми">
+                                <span>Печінка</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="flex:1; min-width:260px;">
+                        <div class="game-question">
+                            <h3>РЕЗУЛЬТАТ КОМП'ЮТЕРНОГО СКАНУВАННЯ</h3>
+                            <p id="game-task">Оберіть анатомічну зону пацієнта на графічному макеті зліва для виведення експертної аналітики.</p>
+                        </div>
+
+                        <div style="background:var(--bg-card); border:1px solid var(--border); border-radius:8px; padding:1.5rem; margin-bottom:1.5rem;">
+                            <h3 style="color:var(--accent-light); font-family:var(--font-mono); font-size:0.85rem; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:1rem;">Ручний вибір зони дослідження:</h3>
+                            <button class="organ-btn" data-organ="brain">Мозок</button>
+                            <button class="organ-btn" data-organ="heart">Серце</button>
+                            <button class="organ-btn" data-organ="liver">Печінка</button>
+                        </div>
+
+                        <div style="background:var(--bg-card); border:1px solid var(--border); border-radius:8px; padding:1.5rem;">
+                            <h3 style="color:var(--accent-light); font-family:var(--font-mono); font-size:0.85rem; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:0.75rem;">Експрес-тест для інтернів</h3>
+                            <p style="font-size:0.9rem; color:var(--text-warm); margin-bottom:1rem;" id="quiz-question">Який орган є першочерговою мішенню при підозрі на приховану уремічну енцефалопатію у кейсі тижня?</p>
+                            <div style="display:flex; flex-direction:column; gap:0.5rem;" id="quiz-answers">
+                                <button class="organ-btn" onclick="handleQuizGame(this, false)">Серце (кардіоміопатія)</button>
+                                <button class="organ-btn" onclick="handleQuizGame(this, true)">Головний мозок (кора та нейрони)</button>
+                                <button class="organ-btn" onclick="handleQuizGame(this, false)">Печінка (гепатоз)</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>-->
+
+        <footer>
+            <p>© Diagnostic Center · Панель медичної допомоги пацієнтам · 2026</p>
+        </footer>
+
+    </div>
+
+    <script>
+        function handleQuizGame(btn, correct) {
+            if (correct) {
+                btn.style.borderColor = '#27ae60';
+                btn.style.background = 'rgba(39,174,96,0.15)';
+                if (window.showToast) window.showToast('images/use_it_brain.jpg', 'Правильно! Ниркові токсини уремії уражають саме клітини кори головного мозку.');
+            } else {
+                btn.style.borderColor = '#e74c3c';
+                btn.style.background = 'rgba(231,76,60,0.15)';
+                if (window.showToast) window.showToast('images/wahui1.jpg', 'Помилка. Цей орган страждає вторинно. Головний удар припадає на іншу систему.');
+            }
+        }
+    </script>
+    
+
+</body>
+</html>

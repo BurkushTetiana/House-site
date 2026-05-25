@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Контакти та підтримка · Diagnostic Center</title>
+  <script type="module" crossorigin src="/assets/script-CSLGVcfc.js"></script>
+  <script type="module" crossorigin src="/assets/quotes-DQRSH3mN.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/about-u0RfjyYy.css">
+</head>
+<body>
+    <div id="page-content" class="visible">
+
+        <header id="site-header">
+            <div class="header-inner">
+                <a href="index.html"><img class="header-logo" src="/assets/use_it_logl-B1yuBCD_.jpg" alt="Logo" /></a>
+                <span class="header-title">Diagnostic Center</span>
+                <nav class="header-nav">
+                    <a href="index.html" data-i18n="nav-main">Головна</a>
+                    <a href="about.html" data-i18n="nav-about">Про центр</a>
+                    <a href="team.html" data-i18n="nav-team">Персонал</a>
+                    <a href="cases.html" data-i18n="nav-cases">Кейси</a>
+                    <a href="game.html" data-i18n="nav-game">Гра</a>
+                    <a href="contacts.html" class="active" data-i18n="nav-contacts">Контакти</a>
+                </nav>
+                <div class="header-controls">
+
+                    <div class="lang-switcher">
+                        <button class="lang-btn active" data-lang="ua">UA</button>
+                        <button class="lang-btn" data-lang="en">EN</button>
+                    </div>
+                    <button id="theme-toggle" title="Перемкнути тему">☀️</button>
+                    <button id="auth-trigger-btn" class="btn-auth" data-i18n="btn-auth">Увійти</button>
+                </div>
+            </div>
+        </header>
+
+        <section class="section">
+            <div class="container">
+                <h1 style="color:var(--accent-light); margin-bottom:0.4rem;" data-i18n="nav-contacts">Контакти</h1>
+                <p style="color:var(--text-muted); font-family:var(--font-mono); font-size:0.82rem; letter-spacing:0.06em; margin-bottom:2.5rem;">
+                    Виникли проблеми з персоналом або затримкою досліджень? Подайте офіційне звернення до керівництва клініки.
+                </p>
+
+                <div class="contacts-grid">
+                    <div class="contact-info">
+                        <h2 class="section-title">Права пацієнта в нашому центрі</h2>
+                        <div style="background:var(--bg-card); border:1px solid var(--border); border-radius:8px; padding:1.75rem; margin-bottom:1.5rem;">
+                            <div style="margin-bottom:1rem;">
+                                <span class="contact-label">Адміністрація супорту</span>
+                                <p style="color:var(--text-warm); font-size:0.9rem; margin:0.4rem 0 0; line-height:1.6;">
+                                    Princeton-Plainsboro Teaching Hospital,<br>
+                                    Корпус діагностичної медицини, 1-й поверх,<br>
+                                    Кабінет офісу захисту прав пацієнтів та внутрішнього контролю.
+                                </p>
+                            </div>
+                            <div style="margin-bottom:1rem; padding-top:1rem; border-top:1px solid var(--border);">
+                                <span class="contact-label">Гаряча лінія скарг</span>
+                                <p style="color:var(--text-warm); font-size:0.9rem; margin:0.4rem 0 0;">+1 (609) 555-0199 (Внутр. 44)</p>
+                                <p style="color:var(--text-muted); font-size:0.78rem; font-style:italic; margin:0.2rem 0 0;">Дзвінки приймаються секретаріатом головного лікаря адміністрації.</p>
+                            </div>
+                            <div style="padding-top:1rem; border-top:1px solid var(--border);">
+                                <span class="contact-label">Регламент розгляду скарг</span>
+                                <p style="color:var(--text-warm); font-size:0.9rem; margin:0.4rem 0 0;">
+                                    Усі електронні претензії щодо некоректної поведінки штатних діагностів, необґрунтованого цинізму під час збору анамнезу або затримок видачі бланків лабораторних аналізів реєструються автоматично і передаються на розгляд головному лікарю лікарні протягом 24 годин.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2 class="section-title">Надіслати претензію / Повідомити про порушення</h2>
+                        <div class="medical-form" style="max-width:100%;">
+                            <div class="form-header">
+                                <h2>Офіційна претензія до керівництва</h2>
+                                <p>Усі поля форми є обов'язковими для реєстрації внутрішнього розслідування</p>
+                            </div>
+                            <form id="support-complaint-form" novalidate>
+                                <div class="form-row">
+                                    <label for="complaint-name">Ім'я та прізвище пацієнта *</label>
+                                    <input type="text" id="complaint-name" placeholder="Введіть ваше ім'я" required />
+                                    <div class="form-error" id="c-name-error"></div>
+                                </div>
+                                <div class="form-row">
+                                    <label for="complaint-email">Контактний Email *</label>
+                                    <input type="email" id="complaint-email" placeholder="your@email.com" required />
+                                    <div class="form-error" id="c-email-error"></div>
+                                </div>
+                                <div class="form-row">
+                                    <label for="complaint-type">Предмет скарги або порушення *</label>
+                                    <select id="complaint-type" required>
+                                        <option value="">— Оберіть категорію —</option>
+                                        <option value="rudeness">Груба поведінка / Надмірний цинізм лікаря</option>
+                                        <option value="delay">Затримка результатів лабораторних досліджень / аналізів</option>
+                                        <option value="experiment">Проведення діагностичних процедур без згоди пацієнта</option>
+                                        <option value="organization">Організаційні проблеми (черги, відсутність лікарів на зміні)</option>
+                                        <option value="other">Інше порушення прав пацієнта</option>
+                                    </select>
+                                    <div class="form-error" id="c-type-error"></div>
+                                </div>
+                                <div class="form-row">
+                                    <label for="complaint-msg">Детальний опис інциденту *</label>
+                                    <textarea id="complaint-msg" rows="15" style="min-height: 200px; resize: vertical;" placeholder="Будь ласка, вкажіть дату, прізвище лікаря-діагноста та детально опишіть ситуацію." required></textarea>
+                                    <div class="form-error" id="c-msg-error"></div>
+                                </div>
+                                <div class="form-actions">
+                                    <button class="btn-gold" type="submit" data-i18n="btn-send-complaint">Надіслати скаргу керівництву центру</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>© Diagnostic Center · Панель медичної допомоги пацієнтам · 2026</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>

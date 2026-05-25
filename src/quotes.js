@@ -1,15 +1,3 @@
-window.houseQuotes = [
-    "Кохання — це серйозне психічне захворювання.",
-    "Це фундаментальна істина людського буття, що всі брешуть.",
-    "В житті жахливо чекати, поки ти будеш готовий.",
-    "Успіх не вічний, а невдача не фатальна.",
-    "Аналіз  Бути у стосунках не завжди означає бути поруч, а бути самотнім не завжди означає самотність..",
-    "«Час змінює все»... так кажуть люди, але це неправда. Роблячи щось, ми змінюємо речі. Нічого не роблячи, ми залишаємо речі такими, якими вони є.",
-    "Не подобається? Виходи є на всіх поверхах.",
-    "Якщо вам не подобається відповідь, не ставте питання.",
-    "Твій мозок пошкоджений... Ти приречена на щастя на все життя."
-];
-
 window.organQuotes = {
     heart: ["Кардіосистема під загрозою вторинного ураження. Перевірте провідність міокарда.", "Дисфункція лівого шлуночка. Необхідно виключити прихований міокардит."],
     brain: ["Уражено клітини кори головного мозку. Локалізовано нейротоксичний синдром.", "Енцефалопатія підтверджена. Необхідно зняти локальний набряк речовини мозку."],
@@ -40,9 +28,21 @@ window.translations = {
         "msg-title": "Написати до консиліуму",
         "msg-btn": "Надіслати на медичний розбір",
         "wheel-title": "Колесо експертної мудрості",
-        "wheel-sub": "Натисніть на діагностичне колесо, щоб отримати велику мудріть доктора Хауса.",
+        "wheel-sub": "Натисніть на діагностичне колесо, щоб отримати велику мудрість доктора Хауса.",
         "wheel-caption": "КЛІНІЧНИЙ ВИСНОВОК",
-        "wheel-start": "Натисніть на колесо для запуску аналізу."
+        "wheel-start": "Натисніть на колесо для запуску аналізу.",
+        "btn-send-complaint": "Надіслати скаргу керівництву центру",
+        "quotes": [
+            "Кохання — це серйозне психічне захворювання.",
+            "Це фундаментальна істина людського буття, що всі брешуть.",
+            "В житті жахливо чекати, поки ти будеш готовий.",
+            "Успіх не вічний, а невдача не фатальна.",
+            "Бути у стосунках не завжди означає бути поруч, а бути самотнім не завжди означає самотність.",
+            "«Час змінює все»... так кажуть люди, але це неправда. Роблячи щось, ми змінюємо речі. Нічого не роблячи, ми залишаємо речі такими, якими вони є.",
+            "Не подобається? Виходи є на всіх поверхах.",
+            "Якщо вам не подобається відповідь, не ставте питання.",
+            "Твій мозок пошкоджений... Ти приречена на щастя на все життя."
+        ]
     },
     en: {
         "nav-main": "Home",
@@ -63,6 +63,18 @@ window.translations = {
         "wheel-title": "Wheel of Expert Wisdom",
         "wheel-sub": "Click on the diagnostic wheel to gain the great wisdom of Doctor House.",
         "wheel-caption": "CLINICAL CONCLUSION",
-        "wheel-start": "Click on the wheel to start analysis."
+        "wheel-start": "Click on the wheel to start analysis.",
+        "btn-send-complaint": "Submit Complaint to Administration",
+        "quotes": [
+            "Love is a serious mental disease.",
+            "It is a basic truth of the human condition that everybody lies.",
+            "It's a terrible thing in life to wait until you're ready.",
+            "Success is not final, failure is not fatal.",
+            "Being in a relationship doesn't always mean being together, and being single doesn't always mean being lonely.",
+            "They say time changes everything. That's not true. Doing things changes things. Not doing things leaves things exactly as they were.",
+            "Don't like it? There are exits on every floor.",
+            "If you don't like the answer, don't ask the question.",
+            "Your brain is damaged... You're doomed to be happy for the rest of your life."
+        ]
     }
 };

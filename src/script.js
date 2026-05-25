@@ -62,7 +62,8 @@ function initFortuneWheel() {
     if (!canvas || !canvas.getContext) return;
     const ctx = canvas.getContext('2d');
 
-    const localQuotes = window.houseQuotes || ["Діагноз формується..."];
+    let currentLang = localStorage.getItem('house-lang') || 'ua';
+    const localQuotes = window.translations[currentLang].quotes;
     const N = localQuotes.length;
     const colors = ['#32332D', '#292A24', '#3a3b34', '#25261f', '#2e2f29', '#383930'];
     const R = canvas.width / 2;
@@ -108,8 +109,11 @@ function initFortuneWheel() {
             spinning = false;
             const norm = ((angle % (Math.PI * 2)) + Math.PI * 2) % (Math.PI * 2);
             const idx = Math.floor(N - (norm / (Math.PI * 2) * N)) % N;
+            let activeLang = localStorage.getItem('house-lang') || 'ua';
+            let currentQuotes = window.translations[activeLang].quotes;
+
             const el = document.getElementById('wheel-quote');
-            if (el) typeText(el, localQuotes[idx]);
+            if (el) typeText(el, currentQuotes[idx]);
         } else {
             requestAnimationFrame(animate);
         }
@@ -374,3 +378,47 @@ function showToast(imgSrc, text) {
     setTimeout(() => toast.classList.remove('show'), 4000);
     window.showToast = showToast;
 }
+
+window.calculateCost = function () {
+    const pricePerTest = 500;
+    const count = document.getElementById('tests-amount').value;
+    const total = count * pricePerTest;
+
+    const resultEl = document.getElementById('cost-result');
+    resultEl.innerHTML = `Загальна сума за ${count} аналізів: <strong>${total} грн</strong>`;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const calcBtn = document.getElementById('calc-button');
+    const resetBtn = document.getElementById('reset-button');
+    const listEl = document.getElementById('selected-list');
+    const totalEl = document.getElementById('total-price');
+
+    let total = 0;
+    let selectedNames = [];
+
+    // Логіка додавання
+    if (calcBtn) {
+        calcBtn.addEventListener('click', () => {
+            const select = document.getElementById('test-select');
+            const price = parseInt(select.value);
+            const name = select.options[select.selectedIndex].text.split(' —')[0];
+
+            total += price;
+            selectedNames.push(name);
+
+            listEl.textContent = selectedNames.join(', ');
+            totalEl.textContent = `${total} грн`;
+        });
+    }
+
+    // Логіка скидання
+    if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+            total = 0;
+            selectedNames = [];
+            listEl.textContent = "—";
+            totalEl.textContent = "0 грн";
+        });
+    }
+});

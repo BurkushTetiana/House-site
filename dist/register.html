@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Реєстрація · Diagnostic Center USE IT</title>
+  <script type="module" crossorigin src="/assets/script-CSLGVcfc.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/about-u0RfjyYy.css">
+</head>
+<body>
+    <div id="page-content" class="visible">
+
+        <header id="site-header">
+            <div class="header-inner">
+                <a href="index.html"><img class="header-logo" src="/assets/use_it_brain-BkUyOP1g.jpg" alt="USE IT" /></a>
+                <span class="header-title">Diagnostic Center · USE IT</span>
+                <nav class="header-nav">
+                    <a href="index.html">Головна</a>
+                    <a href="about.html">Про Хауса</a>
+                    <a href="team.html">Команда</a>
+                    <a href="gallery.html">Галерея</a>
+                    <a href="cases.html">Кейси</a>
+                    <a href="game.html">Гра</a>
+                    <a href="register.html">Реєстрація</a>
+                    <a href="contacts.html">Контакти</a>
+                </nav>
+                <button id="theme-toggle" title="Перемкнути тему">☀️</button>
+            </div>
+        </header>
+
+        <section class="section">
+            <div class="container">
+                <h1 style="color:var(--accent-light);margin-bottom:0.4rem;">Реєстрація пацієнта</h1>
+                <p style="color:var(--text-muted);font-family:var(--font-mono);font-size:0.82rem;letter-spacing:0.06em;margin-bottom:2.5rem;">Спробуйте заповнити. Хаус все одно не вірить жодному слову.</p>
+
+                <form id="register-form" novalidate>
+                    <div class="medical-form">
+                        <div class="form-header">
+                            <h2>Медична картка · ФОРМА PP-01</h2>
+                            <p>Princeton-Plainsboro Teaching Hospital · Відділення діагностики</p>
+                        </div>
+
+                        <!-- NAME -->
+                        <div class="form-row">
+                            <label for="patient-name">Ім'я та прізвище *</label>
+                            <input type="text" id="patient-name" name="patient-name" placeholder="Грегорі Хаус" />
+                            <div class="form-error" id="name-error"></div>
+                        </div>
+
+                        <!-- EMAIL -->
+                        <div class="form-row">
+                            <label for="patient-email">Email *</label>
+                            <input type="email" id="patient-email" name="patient-email" placeholder="house@ppth.com" />
+                            <div class="form-error" id="email-error"></div>
+                        </div>
+
+                        <!-- PHONE -->
+                        <div class="form-row">
+                            <label for="patient-phone">Телефон *</label>
+                            <input type="tel" id="patient-phone" name="patient-phone" placeholder="+380501234567" />
+                            <div class="form-error" id="phone-error"></div>
+                        </div>
+
+                        <!-- DOB -->
+                        <div class="form-row">
+                            <label for="patient-dob">Дата народження *</label>
+                            <input type="date" id="patient-dob" name="patient-dob" />
+                            <div class="form-error" id="dob-error"></div>
+                        </div>
+
+                        <!-- GENDER -->
+                        <div class="form-row">
+                            <label>Стать *</label>
+                            <div class="radio-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="gender" value="male" /> Чоловік
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="gender" value="female" /> Жінка
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="gender" value="house" /> Хаус вирішить сам
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- SYMPTOMS SELECT -->
+                        <div class="form-row">
+                            <label for="symptoms-select">Основний симптом</label>
+                            <select id="symptoms-select" name="symptoms-select">
+                                <option value="">— Оберіть симптом —</option>
+                                <option value="pain">Біль (невизначений)</option>
+                                <option value="fever">Температура</option>
+                                <option value="hallucinations">Галюцинації</option>
+                                <option value="something_wrong">Щось не те</option>
+                                <option value="other">Інше</option>
+                            </select>
+                        </div>
+
+                        <!-- SYMPTOMS DESC -->
+                        <div class="form-row">
+                            <label for="symptoms-desc">Опис симптомів *</label>
+                            <textarea id="symptoms-desc" name="symptoms-desc" placeholder="Опишіть симптоми детально. Мінімум 10 символів. Без поезії." rows="4"></textarea>
+                            <div class="form-error" id="symptoms-error"></div>
+                        </div>
+
+                        <!-- AGREE -->
+                        <div class="checkbox-row">
+                            <input type="checkbox" id="agree-rudeness" name="agree-rudeness" />
+                            <label for="agree-rudeness">
+                                Погоджуюсь що Хаус може мені нагрубити в процесі лікування, відмовитись відповідати на дзвінки, і вирішувати мою справу граючи у відеоігри в своєму кабінеті
+                            </label>
+                        </div>
+                        <div class="form-error" id="agree-error"></div>
+
+                        <!-- ACTIONS -->
+                        <div class="form-actions">
+                            <button type="submit" class="btn-gold">Записатись на прийом</button>
+                            <button type="reset" class="btn-dark">Скинути</button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <footer>
+            <p>© Diagnostic Center USE IT · Усі діагнози вигадані · Усі пацієнти вигадані · Хаус реальний</p>
+        </footer>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Діагностичні кейси · Diagnostic Center</title>
+    <style>
+        .wide-article {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+            .wide-article h2 {
+                color: var(--accent-light);
+                margin-bottom: 1.5rem;
+                font-family: var(--font-mono);
+                font-size: 1.5rem;
+            }
+
+        .caterpillar-layout {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .caterpillar-img-wrap {
+            flex: 0 0 auto;
+            width: 100%;
+            max-width: 320px;
+        }
+
+            .caterpillar-img-wrap img {
+                border-radius: 6px;
+                border: 1px solid var(--border);
+            }
+
+        .caterpillar-text {
+            flex: 1;
+            min-width: 280px;
+        }
+
+            .caterpillar-text p {
+                font-size: 1rem;
+                line-height: 1.7;
+                margin-bottom: 1rem;
+            }
+
+        .bottom-diagnosis-guess {
+            background: var(--bg-card);
+            border: 2px solid var(--accent-dark);
+            border-radius: 10px;
+            padding: 2.5rem;
+            margin-top: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+            .bottom-diagnosis-guess h2 {
+                color: var(--accent-light);
+                font-family: var(--font-mono);
+                font-size: 1.4rem;
+                letter-spacing: 0.06em;
+                text-transform: uppercase;
+                margin-bottom: 1.5rem;
+                border-bottom: 1px solid var(--border);
+                padding-bottom: 0.5rem;
+            }
+
+        .diagnosis-input-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .bottom-diagnosis-guess input {
+            background: var(--bg-main);
+            border: 1px solid var(--border);
+            color: var(--text-warm);
+            padding: 0.75rem 1.25rem;
+            border-radius: 6px;
+            font-size: 1rem;
+            outline: none;
+            flex: 1;
+            min-width: 280px;
+            transition: border-color 0.2s;
+        }
+
+            .bottom-diagnosis-guess input:focus {
+                border-color: var(--accent-light);
+            }
+
+        .bottom-diagnosis-guess .btn-gold {
+            margin-top: 0;
+            padding: 0.75rem 2rem;
+        }
+
+        #diagnosis-result {
+            margin-top: 1.5rem;
+            display: none;
+            padding: 1.25rem;
+            background: var(--bg-main);
+            border-left: 4px solid var(--accent-light);
+            border-radius: 0 6px 6px 0;
+            line-height: 1.6;
+        }
+    </style>
+  <script type="module" crossorigin src="/assets/script-CSLGVcfc.js"></script>
+  <script type="module" crossorigin src="/assets/quotes-DQRSH3mN.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/about-u0RfjyYy.css">
+</head>
+<body>
+    <div id="page-content" class="visible">
+
+        <header id="site-header">
+            <div class="header-inner">
+                <a href="index.html"><img class="header-logo" src="/assets/use_it_logl-B1yuBCD_.jpg" alt="Logo" /></a>
+                <span class="header-title">Diagnostic Center</span>
+                <nav class="header-nav">
+                    <a href="index.html" data-i18n="nav-main">Головна</a>
+                    <a href="about.html" data-i18n="nav-about">Про центр</a>
+                    <a href="team.html" data-i18n="nav-team">Персонал</a>
+                    <a href="cases.html" class="active" data-i18n="nav-cases">Кейси</a>
+                    <a href="game.html" data-i18n="nav-game">Гра</a>
+                    <a href="contacts.html" data-i18n="nav-contacts">Контакти</a>
+                </nav>
+                <div class="header-controls">
+                    <div class="lang-switcher">
+                        <button class="lang-btn active" data-lang="ua">UA</button>
+                        <button class="lang-btn" data-lang="en">EN</button>
+                    </div>
+                    <button id="theme-toggle" title="Перемкнути тему">☀️</button>
+                    <button id="auth-trigger-btn" class="btn-auth" data-i18n="btn-auth">Увійти</button>
+                </div>
+            </div>
+        </header>
+
+        <section class="section">
+            <div class="container">
+                <h1 style="color:var(--accent-light); margin-bottom: 2rem;" data-i18n="nav-cases">Кейси</h1>
+
+                <div class="wide-article">
+                    <h2>Вплив хронічних токсичних інтоксикацій на диференціальну діагностику</h2>
+                    <div class="caterpillar-layout">
+                        <div class="caterpillar-img-wrap">
+                            <img src="/assets/caterpillar-D9YxhBBV.jpg" alt="Хімічний аналіз тютюнового диму" />
+                        </div>
+                        <div class="caterpillar-text">
+                            <p>Вдихання тютюнового диму є одним із найбільш руйнівних факторів, що систематично викривлюють результати клінічних лабораторних досліджень. Процес горіння сигарети виділяє понад 4000 activeних хімічних сполук, серед яких домінують нікотин, оксид вуглецю (чадний газ), формальдегід, ціаністий водень та смоли, насичені важкими металами. Ці речовини діють як прямі біохімічні деструктори, здатні повністю замаскувати або, навпаки, симулювати симптоми серйозних автоімунних та онкологічних захворювань.</p>
+                            <p>Оксид вуглецю має у 200 разів вищу спорідненість до гемоглобіну, ніж кисень, утворюючи стійку сполуку — карбоксигемоглобін. Як наслідок, організм пацієнта перебуває в стані хронічної тканинної гіпоксії. Щоб компенсувати нестачу кисню, кістковий мозок починає гіперпродукцію еритроцитів. Під час первинного аналізу крові лікар бачить різке підвищення рівня еритроцитів та гемоглобіну (еритроцитоз), що візуально копіює симптоматику справжньої хронічної еритремії (хвороби Вакеза) або вказує на наявність пухлини нирок.</p>
+                            <p>Крім того, регулярне надходження смол викликає перманентне запалення бронхіального дерева, стимулюючи постійний хронічний лейкоцитоз. Це робить базовий загальний аналіз крові абсолютно неінформативним, приховуючи реальний розвиток інфекційних процесів або початкові стадії лімфоми. Саме тому збір токсикологічного анамнезу та повна відмова від куріння є обов'язковою передумовою для встановлення точного діагнозу в нашому центрі.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bottom-diagnosis-guess">
+                    <h2>КЛІНІЧНИЙ КЕЙС ТИЖНЯ</h2>
+                    <p style="color:var(--text-main); font-size:1.1rem; line-height:1.6; margin-bottom:1.5rem;">
+                        <strong>Анамнез:</strong> Пацієнт, 35 років. Доставлений у приймальне відділення зі скаргами на раптовий епізод повної втрати пам'яті тривалістю близько 3 годин, який супроводжувався інтенсивним мерехтінням («фотопсіями») в очах та вираженим нюховим синдромом — нав'язливим стійким запахом свіжих апельсинів за повної відсутності будь-яких цитрусових поруч.
+                    </p>
+                    <p style="color:var(--text-muted); font-size:0.95rem;">
+                        Спробуйте встановити первинний патологічний стан. Введіть передбачувану медичну назву процесу або симптому (наприклад: <em>тіа, мігрень, аура, епілепсія</em>) для проведення комп'ютерної звірки.
+                    </p>
+
+                    <div class="diagnosis-input-group">
+                        <input type="text" id="diagnosis-input" placeholder="Введіть ваш клінічний діагноз..." />
+                        <button class="btn-gold" id="check-diagnosis">Перевірити аналіз</button>
+                    </div>
+
+                    <div id="diagnosis-result"></div>
+                </div>
+
+            </div>
+        </section>
+
+        <footer>
+            <p>© Diagnostic Center · Панель медичної допомоги пацієнтам · 2026</p>
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const checkBtn = document.getElementById('check-diagnosis');
+            const diagResult = document.getElementById('diagnosis-result');
+
+            if (checkBtn && diagResult) {
+                checkBtn.addEventListener('click', () => {
+                    const val = document.getElementById('diagnosis-input').value.trim().toLowerCase();
+                    if (!val) return;
+
+                    const correctTerms = ['транзиторна', 'транзиторка', 'тіа', 'мігрень', 'епілепсія', 'аура'];
+                    let isClose = false;
+                    for (let i = 0; i < correctTerms.length; i++) {
+                        if (val.indexOf(correctTerms[i]) !== -1) { isClose = true; break; }
+                    }
+
+                    if (isClose) {
+                        diagResult.style.borderColor = 'var(--accent-light)';
+                        diagResult.innerHTML = '<strong>✓ Аналіз частково правильний.</strong> Напрямок мислення вірний! Мерехтіння в очах та запах апельсинів — класичні прояви неврологічної аури. Реальний діагноз центру: уремічна енцефалопатія через інтоксикацію важкими металами.';
+                    } else {
+                        diagResult.style.borderColor = '#e74c3c';
+                        diagResult.innerHTML = '<strong>✗ Клінічна помилка.</strong> Діагноз не підтверджено. Вказана вами патологія не здатна одночасно поєднати антероградну амнезію та складні нюхові галюцинації. Спробуйте подумати в напрямку неврології.';
+                    }
+                    diagResult.style.display = 'block';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
