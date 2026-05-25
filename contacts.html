@@ -22,11 +22,13 @@
                     <a href="contacts.html" class="active" data-i18n="nav-contacts">Контакти</a>
                 </nav>
                 <div class="header-controls">
+
                     <div class="lang-switcher">
                         <button class="lang-btn active" data-lang="ua">UA</button>
                         <button class="lang-btn" data-lang="en">EN</button>
                     </div>
                     <button id="theme-toggle" title="Перемкнути тему">☀️</button>
+                    <button id="auth-trigger-btn" class="btn-auth" data-i18n="btn-auth">Увійти</button>
                 </div>
             </div>
         </header>
@@ -96,7 +98,7 @@
                                 </div>
                                 <div class="form-row">
                                     <label for="complaint-msg">Детальний опис інциденту *</label>
-                                    <textarea id="complaint-msg" rows="5" placeholder="Будь ласка, вкажіть дату, прізвище лікаря-діагноста та детально опишіть ситуацію. Претензії без конкретних фактів не розглядаються." required></textarea>
+                                    <textarea id="complaint-msg" rows="15" style="min-height: 200px; resize: vertical;" placeholder="Будь ласка, вкажіть дату, прізвище лікаря-діагноста та детально опишіть ситуацію." required></textarea>
                                     <div class="form-error" id="c-msg-error"></div>
                                 </div>
                                 <div class="form-actions">
@@ -116,6 +118,6 @@
     </div>
 
     <script type="module" src="src/quotes.js"></script>
-    <script type="module" src="src/script.js"></script>
+    <script type="module" src="/src/script.js"></script>
 </body>
 </html>

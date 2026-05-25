@@ -56,7 +56,7 @@ function initLanguageSystem() {
     applyLanguage(currentLang);
 }
 
-// ===== ВЕЛИКІ ЦИФРИ НА КОЛЕСІ ФОРТУНИ =====
+//ВЕЛИКІ ЦИФРИ НА КОЛЕСІ ФОРТУНИ
 function initFortuneWheel() {
     const canvas = document.getElementById('fortune-wheel');
     if (!canvas || !canvas.getContext) return;
@@ -122,7 +122,7 @@ function initFortuneWheel() {
     drawWheel(0);
 }
 
-// ===== SCROLL DOWN =====
+//SCROLL DOWN
 function setupHeroScroll() {
     const scrollBtn = document.querySelector('.hero-banner-section .btn-gold');
     const target = document.querySelector('.message-block');
@@ -140,7 +140,7 @@ function setupHeroScroll() {
     });
 }
 
-// ===== РЕЄСТРАЦІЯ АКАУНТА (ТІЛЬКИ КОНТАКТИ) =====
+//РЕЄСТРАЦІЯ АКАУНТА (ТІЛЬКИ КОНТАКТИ)
 function setupRegisterForm() {
     const form = document.getElementById('register-form');
     if (!form) return;
@@ -170,7 +170,7 @@ function setupRegisterForm() {
     });
 }
 
-// ===== НАДСИЛАННЯ СИМПТОМІВ НА ГОЛОВНІЙ СТОРІНЦІ В SUPABASE =====
+//НАДСИЛАННЯ СИМПТОМІВ НА ГОЛОВНІЙ СТОРІНЦІ В SUPABASE
 function setupConsiliumMessage() {
     const btn = document.getElementById('send-to-house');
     const textarea = document.querySelector('.message-block textarea');
@@ -240,7 +240,7 @@ function setupConsiliumMessage() {
     });
 }
 
-// ===== ІНШІ СИСТЕМНІ КОДИ =====
+//ІНШІ СИСТЕМНІ КОДИ
 function initAuthModal() {
     const modal = document.getElementById('auth-modal');
     const triggerBtn = document.getElementById('auth-trigger-btn');
@@ -302,29 +302,46 @@ function initHorizontalCarousel() {
         current = (idx + slides.length) % slides.length;
         slides[current].classList.add('active');
     }
+
     const btnNext = frame.querySelector('.btn-next');
     const btnPrev = frame.querySelector('.btn-prev');
-    if (btnNext) btnNext.addEventListener('click', () => show(current + 1));
-    if (btnPrev) btnPrev.addEventListener('click', () => show(current - 1));
-}
 
+    // Автоматичне гортання кожні 4 секунди
+    let autoPlay = setInterval(() => show(current + 1), 4000);
+
+    function resetInterval() {
+        clearInterval(autoPlay);
+        autoPlay = setInterval(() => show(current + 1), 4000);
+    }
+
+    if (btnNext) btnNext.addEventListener('click', () => { show(current + 1); resetInterval(); });
+    if (btnPrev) btnPrev.addEventListener('click', () => { show(current - 1); resetInterval(); });
+}
 function initTimer() {
     const elTime = document.getElementById('timer-time');
     const elDate = document.getElementById('timer-date');
     const elShift = document.getElementById('timer-shift');
-    const elWindow = document.getElementById('timer-window');
     if (!elTime) return;
-    const shifts = [8, 14, 20];
+
     const months = ['січня', 'лютого', 'березня', 'квітня', 'травня', 'червня', 'липня', 'серпня', 'вересня', 'жовтня', 'листопада', 'грудня'];
     function pad(n) { return String(n).padStart(2, '0'); }
+
     function update() {
         const now = new Date();
         elTime.textContent = `${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
         elDate.textContent = `${now.getDate()} ${months[now.getMonth()]} ${now.getFullYear()}`;
+
+        if (elShift) {
+            const h = now.getHours();
+            if (h >= 8 && h < 15) {
+                elShift.innerHTML = "Поточна зміна: <strong style='color:#27ae60;'>08:00 - 15:00 (Йде прийом)</strong>";
+            } else {
+                elShift.innerHTML = "Наступна зміна: <strong style='color:#e74c3c;'>08:00 - 15:00 (Зачинено)</strong>";
+            }
+        }
     }
     setInterval(update, 1000); update();
 }
-
 function initActiveNav() {
     const path = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('.header-nav a').forEach(a => {
@@ -339,6 +356,7 @@ function typeText(el, text) {
         el.textContent += text[i]; i++;
         if (i >= text.length) clearInterval(interval);
     }, 30);
+    window.typeText = typeText;
 }
 
 function showToast(imgSrc, text) {
@@ -354,4 +372,5 @@ function showToast(imgSrc, text) {
     toast.querySelector('p').textContent = text;
     toast.classList.add('show');
     setTimeout(() => toast.classList.remove('show'), 4000);
+    window.showToast = showToast;
 }

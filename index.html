@@ -130,7 +130,7 @@
 
                             <div class="form-row" style="margin-bottom:1rem;">
                                 <label style="display:block; font-size:0.8rem; font-family:var(--font-mono); margin-bottom:0.4rem; text-transform:uppercase;">Детальний опис розвитку хвороби *</label>
-                                <textarea style="width:100%; background:var(--bg-main); border:1px solid var(--border); color:var(--text-warm); padding:1rem; border-radius:6px; font-size:0.95rem; resize:vertical; min-height:120px; outline:none;" placeholder="Опишіть ваші симптоми максимально детально. Що болить, коли почалося? (Мінімум 10 символів)"></textarea>
+                                <textarea style="width:100%; background:var(--bg-main); border:1px solid var(--border); color:var(--text-warm); padding:1rem; border-radius:6px; font-size:0.95rem; resize:vertical; min-height:120px; outline:none;" placeholder="Опишіть ваші симптоми максимально детально. Що болить, коли почалося?"></textarea>
                             </div>
 
                             <button id="send-to-house" class="btn-gold" data-i18n="msg-btn">Надіслати на медичний розбір</button>
@@ -150,13 +150,10 @@
                                 <span class="timer-label">Дата</span>
                                 <span class="timer-value" style="font-size:0.95rem" id="timer-date">--</span>
                             </div>
-                            <div class="timer-row">
-                                <span class="timer-label">До перезмінки лікарів</span>
-                                <span class="timer-value" id="timer-shift">--:--:--</span>
+                            <div class="timer-row" style="flex-direction:column;align-items:flex-start;gap:0.3rem; margin-top:0.5rem;">
+                                <span class="timer-label" style="color:var(--accent-light);">Регламент консиліуму:</span>
+                                <span class="timer-status" style="font-size:0.85rem; color:var(--text-muted); line-height:1.4;">Відповіді на надіслані медичні картки надаються виключно у години роботи зміни.</span>
                             </div>
-                            <div class="timer-row" style="flex-direction:column;align-items:flex-start;gap:0.3rem;">
-                                <span class="timer-label">Вікно прийому екстрених листів</span>
-                                <span class="timer-status" id="timer-window">Завантаження...</span>
                             </div>
                         </div>
                     </div>
@@ -171,7 +168,7 @@
                 <div class="wheel-section">
                     <canvas id="fortune-wheel" width="260" height="260"></canvas>
                     <div class="wheel-quote-box">
-                        <p style="font-size:0.75rem;color:var(--text-muted);font-family:var(--font-mono);margin-bottom:0.75rem;" data-i18n="wheel-caption">// КЛІНІЧНИЙ ВИСНОВОК //</p>
+                        <p style="font-size:0.75rem;color:var(--text-muted);font-family:var(--font-mono);margin-bottom:0.75rem;" data-i18n="wheel-caption">КЛІНІЧНИЙ ВИСНОВОК</p>
                         <p id="wheel-quote" data-i18n="wheel-start">Натисніть на колесо для запуску аналізу.</p>
                     </div>
                 </div>
@@ -226,6 +223,6 @@
     </div>
 
     <script type="module" src="src/quotes.js"></script>
-    <script type="module" src="src/script.js"></script>
+    <script type="module" src="/src/script.js"></script>
 </body>
 </html>

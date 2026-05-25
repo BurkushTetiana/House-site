@@ -122,7 +122,7 @@
                     <a href="about.html" data-i18n="nav-about">Про центр</a>
                     <a href="team.html" data-i18n="nav-team">Персонал</a>
                     <a href="cases.html" class="active" data-i18n="nav-cases">Кейси</a>
-                    <a href="game.html" data-i18n="nav-game">Grad</a>
+                    <a href="game.html" data-i18n="nav-game">Гра</a>
                     <a href="contacts.html" data-i18n="nav-contacts">Контакти</a>
                 </nav>
                 <div class="header-controls">
@@ -131,6 +131,7 @@
                         <button class="lang-btn" data-lang="en">EN</button>
                     </div>
                     <button id="theme-toggle" title="Перемкнути тему">☀️</button>
+                    <button id="auth-trigger-btn" class="btn-auth" data-i18n="btn-auth">Увійти</button>
                 </div>
             </div>
         </header>
@@ -154,7 +155,7 @@
                 </div>
 
                 <div class="bottom-diagnosis-guess">
-                    <h2>// КЛІНІЧНИЙ КЕЙС ТИЖНЯ //</h2>
+                    <h2>КЛІНІЧНИЙ КЕЙС ТИЖНЯ</h2>
                     <p style="color:var(--text-main); font-size:1.1rem; line-height:1.6; margin-bottom:1.5rem;">
                         <strong>Анамнез:</strong> Пацієнт, 35 років. Доставлений у приймальне відділення зі скаргами на раптовий епізод повної втрати пам'яті тривалістю близько 3 годин, який супроводжувався інтенсивним мерехтінням («фотопсіями») в очах та вираженим нюховим синдромом — нав'язливим стійким запахом свіжих апельсинів за повної відсутності будь-яких цитрусових поруч.
                     </p>
@@ -180,7 +181,7 @@
     </div>
 
     <script type="module" src="src/quotes.js"></script>
-    <script type="module" src="src/script.js"></script>
+    <script type="module" src="/src/script.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const checkBtn = document.getElementById('check-diagnosis');

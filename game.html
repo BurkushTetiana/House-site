@@ -60,6 +60,7 @@
                         <button class="lang-btn" data-lang="en">EN</button>
                     </div>
                     <button id="theme-toggle" title="Перемкнути тему">☀️</button>
+                    <button id="auth-trigger-btn" class="btn-auth" data-i18n="btn-auth">Увійти</button>
                 </div>
             </div>
         </header>
@@ -107,7 +108,7 @@
 
                     <div style="flex:1; min-width:260px;">
                         <div class="game-question">
-                            <h3>// РЕЗУЛЬТАТ КОМП'ЮТЕРНОГО СКАНУВАННЯ //</h3>
+                            <h3>РЕЗУЛЬТАТ КОМП'ЮТЕРНОГО СКАНУВАННЯ</h3>
                             <p id="game-task">Оберіть анатомічну зону пацієнта на графічному макеті зліва для виведення експертної аналітики.</p>
                         </div>
 
@@ -139,7 +140,7 @@
     </div>
 
     <script type="module" src="src/quotes.js"></script>
-    <script type="module" src="src/script.js"></script>
+    <script type="module" src="/src/script.js"></script>
     <script>
         function handleQuizGame(btn, correct) {
             if (correct) {

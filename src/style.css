@@ -27,8 +27,10 @@ body.light-theme {
     --text-main: #1A1B17;
     --text-warm: #2D2E28;
     --text-muted: #555550;
+    --accent-light: #9B6B2B;
+    --accent-mid: #7A5320;
+    --accent-dark: #5C3D15;
 }
-
 /* ===== RESET & BASE ===== */
 *, *::before, *::after {
     box-sizing: border-box;
@@ -199,7 +201,7 @@ p {
 
 /* ===== HERO SECTION ===== */
 .hero-banner-section {
-    min-height: 440px;
+    min-height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
