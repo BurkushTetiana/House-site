@@ -58,7 +58,15 @@ function initFortuneWheel() {
     if (!canvas || !canvas.getContext) return;
     const ctx = canvas.getContext('2d');
 
-    const localQuotes = window.houseQuotes || ["Діагноз формується..."];
+    // Беремо повний список цитат з вашого файлу перекладів
+    let currentLang = localStorage.getItem('house-lang') || 'ua';
+
+    // Перевіряємо, чи існують переклади, щоб уникнути помилок
+    if (!window.translations || !window.translations[currentLang] || !window.translations[currentLang].quotes) {
+        return;
+    }
+
+    const localQuotes = window.translations[currentLang].quotes;
     const N = localQuotes.length;
     const colors = ['#32332D', '#292A24', '#3a3b34', '#25261f', '#2e2f29', '#383930'];
     const R = canvas.width / 2;
@@ -103,8 +111,13 @@ function initFortuneWheel() {
             spinning = false;
             const norm = ((angle % (Math.PI * 2)) + Math.PI * 2) % (Math.PI * 2);
             const idx = Math.floor(N - (norm / (Math.PI * 2) * N)) % N;
+
+            // Динамічно підтягуємо цитату потрібною мовою
+            let activeLang = localStorage.getItem('house-lang') || 'ua';
+            let currentQuotes = window.translations[activeLang].quotes;
+
             const el = document.getElementById('wheel-quote');
-            if (el) typeText(el, localQuotes[idx]);
+            if (el) typeText(el, currentQuotes[idx]);
         } else {
             requestAnimationFrame(animate);
         }
@@ -116,7 +129,6 @@ function initFortuneWheel() {
     });
     drawWheel(0);
 }
-
 function setupHeroScroll() {
     const scrollBtn = document.querySelector('.hero-banner-section .btn-gold');
     const target = document.querySelector('.message-block');
