@@ -269,10 +269,11 @@ p {
     flex: 1;
     min-width: 300px;
 }
+
     .about-text-col p {
         text-align: justify;
     }
-/* Жорстко фіксуємо ширину колонки з картинкою, щоб вона не розтягувалася на весь екран */
+
 .about-img-col {
     flex: 0 0 350px;
     max-width: 350px;
@@ -307,6 +308,7 @@ p {
         margin-top: 1.5rem;
     }
 }
+
 
 /* ===== СТИЛЬНА ПРЯМОКУТНА ГАЛЕРЕЯ (16:11) ===== */
 .gallery-clean-title {
@@ -849,3 +851,18 @@ footer {
         font-size: 0.95rem; /* Менший текст */
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

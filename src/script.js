@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
     fixAllHeadersStaticTitle();
 });
 
-// Уніфікація назви шапки на всіх сторінках при завантаженні
 function fixAllHeadersStaticTitle() {
     const titleEl = document.querySelector('.header-inner .header-title');
     if (titleEl) {
@@ -45,8 +44,6 @@ function initLanguageSystem() {
             else btn.classList.remove('active');
         });
         localStorage.setItem('house-lang', lang);
-
-        // Гарантуємо, що заголовок біля логотипу не перепишеться мовним об'єктом
         fixAllHeadersStaticTitle();
     }
 
@@ -56,14 +53,12 @@ function initLanguageSystem() {
     applyLanguage(currentLang);
 }
 
-//ВЕЛИКІ ЦИФРИ НА КОЛЕСІ ФОРТУНИ
 function initFortuneWheel() {
     const canvas = document.getElementById('fortune-wheel');
     if (!canvas || !canvas.getContext) return;
     const ctx = canvas.getContext('2d');
 
-    let currentLang = localStorage.getItem('house-lang') || 'ua';
-    const localQuotes = window.translations[currentLang].quotes;
+    const localQuotes = window.houseQuotes || ["Діагноз формується..."];
     const N = localQuotes.length;
     const colors = ['#32332D', '#292A24', '#3a3b34', '#25261f', '#2e2f29', '#383930'];
     const R = canvas.width / 2;
@@ -89,7 +84,6 @@ function initFortuneWheel() {
             ctx.rotate(start + (end - start) / 2);
             ctx.textAlign = 'right';
             ctx.fillStyle = '#D2A56B';
-            // Збільшили шрифт цифр з 10px до 16px Bold для кращої видимості
             ctx.font = 'bold 16px Courier New';
             ctx.fillText(String(i + 1), R - 20, 6);
             ctx.restore();
@@ -109,11 +103,8 @@ function initFortuneWheel() {
             spinning = false;
             const norm = ((angle % (Math.PI * 2)) + Math.PI * 2) % (Math.PI * 2);
             const idx = Math.floor(N - (norm / (Math.PI * 2) * N)) % N;
-            let activeLang = localStorage.getItem('house-lang') || 'ua';
-            let currentQuotes = window.translations[activeLang].quotes;
-
             const el = document.getElementById('wheel-quote');
-            if (el) typeText(el, currentQuotes[idx]);
+            if (el) typeText(el, localQuotes[idx]);
         } else {
             requestAnimationFrame(animate);
         }
@@ -126,7 +117,6 @@ function initFortuneWheel() {
     drawWheel(0);
 }
 
-//SCROLL DOWN
 function setupHeroScroll() {
     const scrollBtn = document.querySelector('.hero-banner-section .btn-gold');
     const target = document.querySelector('.message-block');
@@ -144,7 +134,6 @@ function setupHeroScroll() {
     });
 }
 
-//РЕЄСТРАЦІЯ АКАУНТА (ТІЛЬКИ КОНТАКТИ)
 function setupRegisterForm() {
     const form = document.getElementById('register-form');
     if (!form) return;
@@ -162,7 +151,6 @@ function setupRegisterForm() {
             return;
         }
 
-        // Тимчасово зберігаємо профіль в сесію, щоб потім об'єднати із симптомами
         const userObj = { name, email, phone, dob };
         localStorage.setItem('house-user-profile', JSON.stringify(userObj));
         localStorage.setItem('house-user', email);
@@ -174,7 +162,6 @@ function setupRegisterForm() {
     });
 }
 
-//НАДСИЛАННЯ СИМПТОМІВ НА ГОЛОВНІЙ СТОРІНЦІ В SUPABASE
 function setupConsiliumMessage() {
     const btn = document.getElementById('send-to-house');
     const textarea = document.querySelector('.message-block textarea');
@@ -199,18 +186,25 @@ function setupConsiliumMessage() {
         const genderEl = document.querySelector('input[name="main-gender"]:checked');
         const symptomType = document.getElementById('main-symptoms-select').value;
 
-        // Зчитуємо раніше збережені дані профілю
-        const profileData = JSON.parse(localStorage.getItem('house-user-profile')) || {
-            name: "Анонімний Пацієнт",
-            email: isRegistered,
-            phone: "Не вказано",
-            dob: new Date().toISOString().split('T')[0]
-        };
+        let profileData;
+        try {
+            profileData = JSON.parse(localStorage.getItem('house-user-profile'));
+        } catch (e) {
+            profileData = null;
+        }
+
+        if (!profileData) {
+            profileData = {
+                name: "Анонімний Пацієнт",
+                email: isRegistered,
+                phone: "Не вказано",
+                dob: new Date().toISOString().split('T')[0]
+            };
+        }
 
         btn.disabled = true;
         btn.textContent = "Запис у БД...";
 
-        // Відправка повного пакета даних у Supabase
         const { error } = await supabase.from('patients').insert([
             {
                 name: profileData.name,
@@ -236,7 +230,6 @@ function setupConsiliumMessage() {
             return;
         }
 
-        // Успіх
         const responses = window.messageResponses || ["Аналіз запущено."];
         typeText(resp, `— ${responses[Math.floor(Math.random() * responses.length)]}`);
         showToast('images/shock_worker.jpg', 'Дані про симптоми успішно записані в таблицю Supabase!');
@@ -244,7 +237,6 @@ function setupConsiliumMessage() {
     });
 }
 
-//ІНШІ СИСТЕМНІ КОДИ
 function initAuthModal() {
     const modal = document.getElementById('auth-modal');
     const triggerBtn = document.getElementById('auth-trigger-btn');
@@ -310,7 +302,6 @@ function initHorizontalCarousel() {
     const btnNext = frame.querySelector('.btn-next');
     const btnPrev = frame.querySelector('.btn-prev');
 
-    // Автоматичне гортання кожні 4 секунди
     let autoPlay = setInterval(() => show(current + 1), 4000);
 
     function resetInterval() {
@@ -321,6 +312,7 @@ function initHorizontalCarousel() {
     if (btnNext) btnNext.addEventListener('click', () => { show(current + 1); resetInterval(); });
     if (btnPrev) btnPrev.addEventListener('click', () => { show(current - 1); resetInterval(); });
 }
+
 function initTimer() {
     const elTime = document.getElementById('timer-time');
     const elDate = document.getElementById('timer-date');
@@ -346,6 +338,7 @@ function initTimer() {
     }
     setInterval(update, 1000); update();
 }
+
 function initActiveNav() {
     const path = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('.header-nav a').forEach(a => {
@@ -397,7 +390,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let total = 0;
     let selectedNames = [];
 
-    // Логіка додавання
     if (calcBtn) {
         calcBtn.addEventListener('click', () => {
             const select = document.getElementById('test-select');
@@ -412,7 +404,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Логіка скидання
     if (resetBtn) {
         resetBtn.addEventListener('click', () => {
             total = 0;
@@ -422,3 +413,30 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+setInterval(() => {
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    const totalMinutes = hours * 60 + minutes;
+
+    const startShift = 9 * 60;  // 09:00
+    const endShift = 15 * 60;   // 15:00
+
+    const countdownEl = document.getElementById('shift-countdown');
+    if (!countdownEl) return;
+
+    if (totalMinutes >= startShift && totalMinutes < endShift) {
+        const diff = endShift - totalMinutes;
+        countdownEl.textContent = `До кінця: ${Math.floor(diff / 60)}г ${diff % 60}хв`;
+    } else {
+        const startNext = totalMinutes < startShift ? startShift : (24 * 60 + startShift);
+        const diff = startNext - totalMinutes;
+        countdownEl.textContent = `До початку: ${Math.floor(diff / 60)}г ${diff % 60}хв`;
+    }
+
+    const timerTime = document.getElementById('timer-time');
+    const timerDate = document.getElementById('timer-date');
+    if (timerTime) timerTime.textContent = now.toLocaleTimeString();
+    if (timerDate) timerDate.textContent = now.toLocaleDateString();
+}, 1000);
